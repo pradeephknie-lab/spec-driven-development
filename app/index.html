@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OrangeHRM HR Manager Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">OrangeHRM Demo Directory</p>
+        <h1>HR Manager Search Report</h1>
+        <p class="lede">
+          This local viewer renders the latest Playwright BDD artifact generated from the OrangeHRM directory search flow.
+        </p>
+        <div class="hero-meta">
+          <span id="jobTitleChip">Waiting for report</span>
+          <span id="generatedAt">No artifact loaded</span>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel summary-panel">
+          <h2>Summary</h2>
+          <div class="summary-row">
+            <span>Total Matches</span>
+            <strong id="totalResults">0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Artifact Path</span>
+            <strong>artifacts/hr-managers.json</strong>
+          </div>
+          <p class="helper-text">
+            Run the BDD suite first if this page shows no data.
+          </p>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-heading">
+            <h2>Employees</h2>
+            <button id="reloadButton" type="button">Reload Report</button>
+          </div>
+          <p id="statusMessage" class="status-message"></p>
+          <div id="employeeList" class="employee-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

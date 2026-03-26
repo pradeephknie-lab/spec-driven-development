@@ -1,0 +1,23 @@
+{
+  "name": "orangehrm-directory-bdd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "prepare:folders": "node -e \"require('fs').mkdirSync('artifacts',{recursive:true});require('fs').mkdirSync('reports',{recursive:true});\"",
+    "test:bdd": "npm run prepare:folders && cucumber-js",
+    "test:bdd:headed": "cross-env HEADLESS=false npm run test:bdd",
+    "app": "http-server . -p 4173 -c-1"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "http-server": "^14.1.1",
+    "playwright": "^1.53.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
